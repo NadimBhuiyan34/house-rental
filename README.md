@@ -60,15 +60,17 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+## Project Setup
 
+Run the following commands step-by-step after cloning the repository:
 
+```bash
 docker run --rm \
   -u "$(id -u):$(id -g)" \
   -v "$(pwd):/var/www/html" \
   -w /var/www/html \
   laravelsail/php83-composer:latest \
   composer install --ignore-platform-reqs
-
 
 cp .env.example .env
 
@@ -82,5 +84,5 @@ cp .env.example .env
 
 ./vendor/bin/sail artisan key:generate
 
-./vendor/bin/sail artisan migrate:db --seed
+./vendor/bin/sail artisan migrate --seed
 
